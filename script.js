@@ -2,7 +2,7 @@
 const api_key= "https://quotes-api-self.vercel.app/quote";
 const newQuote= document.querySelector(".quote_btn");
 const tweetBtn= document.querySelector(".tweet_btn");
-var Quotes = document.getElementById("Quotes");
+var quotes = document.getElementById("quotes");
 var author = document.getElementById("author");
 
 
@@ -11,7 +11,7 @@ let temp;
 const getData = async() => {
     const response= await fetch(api_key);
     const data= await response.json();
-    Quotes.innerHTML =data.quote;
+    quotes.innerHTML =data.quote;
     author.innerHTML =data.author;
     temp=data.quote;
 }
